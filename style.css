@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@200;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: nunito;
+}
+
+header {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  padding-top: 10px;
+  padding-left: 30px;
+  font-size: 30px;
+}
+.nav {
+  padding-left: 30%;
+}
+ul {
+  display: flex;
+}
+li {
+  padding: 20px;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 20px;
+  color: aliceblue;
+}
+.hero {
+  background: url("./images/markus-spiske-MI9-PY5cyNs-unsplash.jpg") no-repeat;
+  background-position: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin-top: -65px;
+  display: flex;
+  animation: slide 10s infinite ease-in-out;
+}
+.intro {
+  padding-top: 300px;
+  padding-left: 100px;
+}
+
+.photocontainer {
+  padding-top: 250px;
+  padding-left: 500px;
+  margin-left: -100px;
+  opacity: 1;
+  animation: popup 2s ease-in;
+}
+
+h1 {
+  color: aliceblue;
+  font-size: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.namered {
+  color: crimson;
+  font-size: 70px;
+}
+
+.myphoto {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+
+  border-radius: 50%;
+  background-image: url("./images/20210320074812_IMG_50747.jpg");
+  background-size: 100%;
+}
+.olay {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.9;
+  position: absolute;
+  margin-top: -100vh;
+}
+
+@keyframes slide {
+  0% {
+    background-image: url("./images/markus-spiske-MI9-PY5cyNs-unsplash.jpg");
+  }
+
+  25% {
+    background-image: url("./images/halacious-tZc3vjPCk-Q-unsplash.jpg");
+  }
+
+  50% {
+    background-image: url("./images/christina-wocintechchat-com-PzAd5XCyFJo-unsplash.jpg");
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    padding-top: 10px;
+    padding-left: 30px;
+    font-size: 30px;
+  }
+  .nav {
+    padding-left: 30%;
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    padding: 20px;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 20px;
+    color: aliceblue;
+  }
+  .hero {
+    background: url("./images/markus-spiske-MI9-PY5cyNs-unsplash.jpg") no-repeat;
+    background-position: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: -65px;
+    display: block;
+
+    animation: slide 10s infinite ease-in-out;
+  }
+  .intro {
+    padding-top: 300px;
+    padding-left: 100px;
+  }
+
+  .photocontainer {
+    opacity: 1;
+    animation: popup 2s ease-in;
+  }
+
+  h1 {
+    color: aliceblue;
+    font-size: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .namered {
+    color: crimson;
+    font-size: 70px;
+  }
+
+  .myphoto {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+
+    border-radius: 50%;
+    background-image: url("./images/20210320074812_IMG_50747.jpg");
+    background-size: 100%;
+  }
+  .olay {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.9;
+    position: absolute;
+    margin-top: -100vh;
+  }
+
+  @keyframes slide {
+    0% {
+      background-image: url("./images/markus-spiske-MI9-PY5cyNs-unsplash.jpg");
+    }
+
+    25% {
+      background-image: url("./images/halacious-tZc3vjPCk-Q-unsplash.jpg");
+    }
+
+    50% {
+      background-image: url("./images/christina-wocintechchat-com-PzAd5XCyFJo-unsplash.jpg");
+    }
+  }
+
+  @keyframes popup {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 0.8;
+    }
+  }
+}
