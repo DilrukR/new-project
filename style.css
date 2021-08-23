@@ -17,6 +17,7 @@ header {
   padding-top: 10px;
   padding-left: 30px;
   font-size: 30px;
+  color: white;
 }
 .nav {
   padding-left: 30%;
@@ -33,6 +34,9 @@ a {
   font-family: Montserrat;
   font-size: 20px;
   color: aliceblue;
+}
+.hamburger {
+  visibility: hidden;
 }
 .hero {
   background: url("./images/markus-spiske-MI9-PY5cyNs-unsplash.jpg") no-repeat;
@@ -55,7 +59,6 @@ a {
   padding-left: 500px;
   margin-left: -100px;
   opacity: 1;
-  animation: popup 2s ease-in;
 }
 
 h1 {
@@ -63,11 +66,13 @@ h1 {
   font-size: 50px;
   position: relative;
   z-index: 1;
+  animation: zoomin 2s linear;
 }
 
 .namered {
   color: crimson;
   font-size: 70px;
+  animation: zoomin 2s linear;
 }
 
 .myphoto {
@@ -75,6 +80,7 @@ h1 {
   height: 300px;
   position: absolute;
   z-index: 1;
+  animation: popup 2s ease-in;
 
   border-radius: 50%;
   background-image: url("./images/20210320074812_IMG_50747.jpg");
@@ -104,20 +110,26 @@ h1 {
 }
 
 @keyframes popup {
-  0% {
+  from {
     opacity: 0;
   }
 
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 0.8;
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (min-width: 1080px) {
+  @keyframes zoomin {
+    from {
+      font-size: 25px;
+    }
+    to {
+      font: size 50px;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
   header {
     display: flex;
     position: relative;
@@ -125,7 +137,7 @@ h1 {
   }
 
   .logo {
-    padding-top: 10px;
+    padding-top: 30px;
     padding-left: 30px;
     font-size: 30px;
   }
@@ -140,6 +152,14 @@ h1 {
     padding: 20px;
     list-style: none;
   }
+  .hamburger {
+    color: white;
+    visibility: inherit;
+    margin-top: 40px;
+    padding-left: 200px;
+
+    display: block;
+  }
   a {
     text-decoration: none;
     font-family: Montserrat;
@@ -151,28 +171,35 @@ h1 {
     background-position: cover;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     position: relative;
     margin-top: -65px;
-    display: block;
 
     animation: slide 10s infinite ease-in-out;
   }
   .intro {
-    padding-top: 300px;
-    padding-left: 100px;
+    margin-top: -180px;
+    margin-left: -90px;
+    text-align: center;
   }
 
   .photocontainer {
     opacity: 1;
-    animation: popup 2s ease-in;
+    margin-left: -480px;
+    margin-top: -100px;
+    width: 50%;
+    position: relative;
+    visibility: hidden;
+
+    animation: photorevel2 10s linear infinite;
   }
 
   h1 {
     color: aliceblue;
     font-size: 50px;
-    position: relative;
+    position: absolute;
     z-index: 1;
+    animation: photorevel 10s ease-in infinite;
   }
 
   .namered {
@@ -184,11 +211,11 @@ h1 {
     width: 300px;
     height: 300px;
     position: relative;
-    z-index: 1;
-
+    z-index: 3;
     border-radius: 50%;
     background-image: url("./images/20210320074812_IMG_50747.jpg");
     background-size: 100%;
+    animation: fadein 10s linear;
   }
   .olay {
     width: 100%;
@@ -213,17 +240,88 @@ h1 {
     }
   }
 
-  @keyframes popup {
+  @keyframes photorevel {
     0% {
-      opacity: 0;
+      visibility: visible;
     }
-
+    10% {
+      visibility: visible;
+    }
+    20% {
+      visibility: hidden;
+    }
+    30% {
+      visibility: hidden;
+    }
+    40% {
+      visibility: hidden;
+    }
     50% {
-      opacity: 0.5;
+      visibility: hidden;
+    }
+    60% {
+      visibility: hidden;
+    }
+    70% {
+      visibility: hidden;
+    }
+    80% {
+      visibility: visible;
+    }
+    90% {
+      visibility: visible;
     }
 
     100% {
-      opacity: 0.8;
+    }
+  }
+  @keyframes photorevel2 {
+    0% {
+      visibility: hidden;
+    }
+    10% {
+      visibility: hidden;
+    }
+    20% {
+      visibility: hidden;
+      position: relative;
+      display: block;
+    }
+    30% {
+      visibility: visible;
+      position: relative;
+    }
+    40% {
+      visibility: visible;
+      position: relative;
+    }
+    50% {
+      visibility: visible;
+      position: relative;
+    }
+    60% {
+      visibility: visible;
+    }
+    70% {
+      visibility: hidden;
+    }
+    80% {
+      visibility: hidden;
+    }
+    90% {
+      visibility: hidden;
+    }
+
+    100% {
+      visibility: hidden;
+    }
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 }
